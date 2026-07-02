@@ -28,7 +28,7 @@ local function fling()
    lastPos=h.Position
 
    local v=h.Velocity
-   h.Velocity=v*1e9+Vector3.new(0,1e9,0)
+   h.Velocity=v*1e4+Vector3.new(0,1e4,0)
    RunService.RenderStepped:Wait()
    h.Velocity=v
    RunService.Stepped:Wait()
