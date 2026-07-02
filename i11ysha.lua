@@ -10,14 +10,7 @@ b.Position=UDim2.new(0,10,0,10)
 b.Text="F"
 b.TextScaled=true
 
-local b2=Instance.new("TextButton",g)
-b2.Size=UDim2.new(0,20,0,20)
-b2.Position=UDim2.new(0,35,0,10)
-b2.Text="A"
-b2.TextScaled=true
-
 local t=false
-local a=false
 local lastPos
 
 local function fling()
@@ -44,23 +37,8 @@ local function fling()
  end
 end
 
-RunService.Heartbeat:Connect(function()
- if not a then return end
- local c=p.Character
- local h=c and c:FindFirstChild("HumanoidRootPart")
- if h then
-  h.Velocity=Vector3.zero
-  h.RotVelocity=Vector3.zero
- end
-end)
-
 b.MouseButton1Click:Connect(function()
  t=not t
  b.Text=t and "ON" or "F"
  if t then task.spawn(fling) end
-end)
-
-b2.MouseButton1Click:Connect(function()
- a=not a
- b2.Text=a and "ON" or "A"
 end)
