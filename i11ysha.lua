@@ -5,7 +5,7 @@ local p=Players.LocalPlayer
 local g=Instance.new("ScreenGui",game.CoreGui)
 
 local b=Instance.new("TextButton",g)
-b.Size=UDim2.new(0,20,0,20)
+b.Size=UDim2.new(0,25,0,25)
 b.Position=UDim2.new(0,10,0,10)
 b.Text="F"
 b.TextScaled=true
