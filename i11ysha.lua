@@ -1,8 +1,11 @@
 local Players=game:GetService("Players")
 local RunService=game:GetService("RunService")
+local UserInputService=game:GetService("UserInputService")
+
 local p=Players.LocalPlayer
 local g=Instance.new("ScreenGui",game.CoreGui)
 local b=Instance.new("TextButton",g)
+
 b.Size=UDim2.new(0,35,0,35)
 b.Position=UDim2.new(0,10,0,10)
 b.Text="F"
@@ -35,8 +38,19 @@ local function fling()
  end
 end
 
-b.MouseButton1Click:Connect(function()
+local function toggle()
  t=not t
  b.Text=t and "ON" or "F"
  if t then task.spawn(fling) end
+end
+
+-- Кнопка
+b.MouseButton1Click:Connect(toggle)
+
+-- Клавиша T
+UserInputService.InputBegan:Connect(function(input, gp)
+ if gp then return end
+ if input.KeyCode==Enum.KeyCode.T then
+  toggle()
+ end
 end)
