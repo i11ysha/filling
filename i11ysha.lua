@@ -49,10 +49,8 @@ RunService.Heartbeat:Connect(function()
  local c=p.Character
  local h=c and c:FindFirstChild("HumanoidRootPart")
  if h then
-  if h.Velocity.Magnitude>100 then
-   h.Velocity=Vector3.zero
-   h.RotVelocity=Vector3.zero
-  end
+  h.Velocity=Vector3.zero
+  h.RotVelocity=Vector3.zero
  end
 end)
 
